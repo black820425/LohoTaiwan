@@ -7,16 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70BEF275BED00E1C5DFE1238 /* libPods-LohoTaiwan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA59BCB6CB998E9FEB8CCB9F /* libPods-LohoTaiwan.a */; };
+		CF337CE61F8280BB0082350E /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF337CE51F8280BA0082350E /* MainTableViewCell.m */; };
+		CF34FD151F7A3DD30007E5C3 /* DetailUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF34FD141F7A3DD30007E5C3 /* DetailUITableViewController.m */; };
+		CF34FD181F7A3E080007E5C3 /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF34FD171F7A3E080007E5C3 /* DetailTableViewCell.m */; };
+		CF3637F21F7AD7AC00E30B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3637F11F7AD70800E30B13 /* Assets.xcassets */; };
+		CF3637F51F7C206800E30B13 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3637F41F7C206800E30B13 /* Singleton.m */; };
+		CF451CD51F87DB7B00F3FB60 /* ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF451CD41F87DB7B00F3FB60 /* ScheduleTableViewController.m */; };
 		CF6E067B1F72AC26005ABFAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6E067A1F72AC26005ABFAB /* main.m */; };
 		CF6E067E1F72AC26005ABFAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6E067D1F72AC26005ABFAB /* AppDelegate.m */; };
 		CF6E06811F72AC26005ABFAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6E06801F72AC26005ABFAB /* ViewController.m */; };
 		CF6E06841F72AC26005ABFAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6E06821F72AC26005ABFAB /* Main.storyboard */; };
 		CF6E06871F72AC26005ABFAB /* LohoTaiwan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF6E06851F72AC26005ABFAB /* LohoTaiwan.xcdatamodeld */; };
-		CF6E06891F72AC26005ABFAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6E06881F72AC26005ABFAB /* Assets.xcassets */; };
 		CF6E068C1F72AC26005ABFAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6E068A1F72AC26005ABFAB /* LaunchScreen.storyboard */; };
+		CF6E06951F72AC5B005ABFAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6E06941F72AC5B005ABFAB /* MapKit.framework */; };
+		CF6E06971F72AC62005ABFAB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6E06961F72AC62005ABFAB /* CoreLocation.framework */; };
+		CF6E069A1F72AD22005ABFAB /* DownloadData.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6E06991F72AD22005ABFAB /* DownloadData.m */; };
+		CF6E069D1F72B30E005ABFAB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6E069C1F72B30E005ABFAB /* MapViewController.m */; };
+		CF7614DD1F83907100437089 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7614DC1F83907100437089 /* ListTableViewController.m */; };
+		CFD7A4791F95DCD0001190B6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD7A4771F95DB36001190B6 /* Bolts.framework */; };
+		CFD7A47A1F95DCD2001190B6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD7A4751F95DB36001190B6 /* FBSDKCoreKit.framework */; };
+		CFD7A47B1F95DCD6001190B6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD7A4761F95DB36001190B6 /* FBSDKLoginKit.framework */; };
+		CFD7A47C1F95DCD8001190B6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD7A4781F95DB36001190B6 /* FBSDKShareKit.framework */; };
+		CFD7A47F1F95FBE1001190B6 /* LoginViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7A47E1F95FBE1001190B6 /* LoginViewControler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00CE6D9EE7C1F4C7ADAEB24F /* Pods-LohoTaiwan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LohoTaiwan.release.xcconfig"; path = "Pods/Target Support Files/Pods-LohoTaiwan/Pods-LohoTaiwan.release.xcconfig"; sourceTree = "<group>"; };
+		63DBA13AC7901D437A43BC5B /* Pods-LohoTaiwan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LohoTaiwan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LohoTaiwan/Pods-LohoTaiwan.debug.xcconfig"; sourceTree = "<group>"; };
+		CF337CE41F8280BA0082350E /* MainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		CF337CE51F8280BA0082350E /* MainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		CF34FD131F7A3DD30007E5C3 /* DetailUITableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailUITableViewController.h; sourceTree = "<group>"; };
+		CF34FD141F7A3DD30007E5C3 /* DetailUITableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailUITableViewController.m; sourceTree = "<group>"; };
+		CF34FD161F7A3E080007E5C3 /* DetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
+		CF34FD171F7A3E080007E5C3 /* DetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
+		CF3637F11F7AD70800E30B13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF3637F31F7C206800E30B13 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		CF3637F41F7C206800E30B13 /* Singleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
+		CF451CD31F87DB7B00F3FB60 /* ScheduleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScheduleTableViewController.h; sourceTree = "<group>"; };
+		CF451CD41F87DB7B00F3FB60 /* ScheduleTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleTableViewController.m; sourceTree = "<group>"; };
 		CF6E06761F72AC26005ABFAB /* LohoTaiwan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LohoTaiwan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6E067A1F72AC26005ABFAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF6E067C1F72AC26005ABFAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -25,9 +54,23 @@
 		CF6E06801F72AC26005ABFAB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CF6E06831F72AC26005ABFAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF6E06861F72AC26005ABFAB /* LohoTaiwan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LohoTaiwan.xcdatamodel; sourceTree = "<group>"; };
-		CF6E06881F72AC26005ABFAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF6E068B1F72AC26005ABFAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF6E068D1F72AC26005ABFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF6E06941F72AC5B005ABFAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CF6E06961F72AC62005ABFAB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CF6E06981F72AD22005ABFAB /* DownloadData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadData.h; sourceTree = "<group>"; };
+		CF6E06991F72AD22005ABFAB /* DownloadData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadData.m; sourceTree = "<group>"; };
+		CF6E069B1F72B30E005ABFAB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		CF6E069C1F72B30E005ABFAB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		CF7614DB1F83907100437089 /* ListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
+		CF7614DC1F83907100437089 /* ListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
+		CFD7A4751F95DB36001190B6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "FacebookSDKs-iOS-4.27.1/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		CFD7A4761F95DB36001190B6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "FacebookSDKs-iOS-4.27.1/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		CFD7A4771F95DB36001190B6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "FacebookSDKs-iOS-4.27.1/Bolts.framework"; sourceTree = "<group>"; };
+		CFD7A4781F95DB36001190B6 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "FacebookSDKs-iOS-4.27.1/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		CFD7A47D1F95FBE1001190B6 /* LoginViewControler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewControler.h; sourceTree = "<group>"; };
+		CFD7A47E1F95FBE1001190B6 /* LoginViewControler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewControler.m; sourceTree = "<group>"; };
+		EA59BCB6CB998E9FEB8CCB9F /* libPods-LohoTaiwan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LohoTaiwan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +78,143 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD7A47A1F95DCD2001190B6 /* FBSDKCoreKit.framework in Frameworks */,
+				CF6E06971F72AC62005ABFAB /* CoreLocation.framework in Frameworks */,
+				CFD7A47B1F95DCD6001190B6 /* FBSDKLoginKit.framework in Frameworks */,
+				CFD7A47C1F95DCD8001190B6 /* FBSDKShareKit.framework in Frameworks */,
+				CF6E06951F72AC5B005ABFAB /* MapKit.framework in Frameworks */,
+				70BEF275BED00E1C5DFE1238 /* libPods-LohoTaiwan.a in Frameworks */,
+				CFD7A4791F95DCD0001190B6 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C48674E971FE7135C976CB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63DBA13AC7901D437A43BC5B /* Pods-LohoTaiwan.debug.xcconfig */,
+				00CE6D9EE7C1F4C7ADAEB24F /* Pods-LohoTaiwan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF3637EF1F7ACF2200E30B13 /* ImageFile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageFile;
+			sourceTree = "<group>";
+		};
+		CF3FB2B01F975C2B0059BDCB /* M */ = {
+			isa = PBXGroup;
+			children = (
+				CF3637F31F7C206800E30B13 /* Singleton.h */,
+				CF3637F41F7C206800E30B13 /* Singleton.m */,
+				CF6E06981F72AD22005ABFAB /* DownloadData.h */,
+				CF6E06991F72AD22005ABFAB /* DownloadData.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		CF3FB2B11F975C540059BDCB /* V */ = {
+			isa = PBXGroup;
+			children = (
+				CF6E06821F72AC26005ABFAB /* Main.storyboard */,
+				CF6E068A1F72AC26005ABFAB /* LaunchScreen.storyboard */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		CF3FB2B21F975CBD0059BDCB /* C */ = {
+			isa = PBXGroup;
+			children = (
+				CF3FB2B31F975DBA0059BDCB /* LoginViewControler */,
+				CF4D0E7F1F83819C00D66246 /* MainViewControler */,
+				CF4D0E821F8382B100D66246 /* ListViewControler */,
+				CF4D0E801F8381EF00D66246 /* MapViewControler */,
+				CF4D0E811F83823300D66246 /* DetailViewControler */,
+				CF451CD21F87DA9400F3FB60 /* ScheduleViewControler */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		CF3FB2B31F975DBA0059BDCB /* LoginViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				CFD7A47D1F95FBE1001190B6 /* LoginViewControler.h */,
+				CFD7A47E1F95FBE1001190B6 /* LoginViewControler.m */,
+			);
+			path = LoginViewControler;
+			sourceTree = "<group>";
+		};
+		CF3FB2B41F975E640059BDCB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CF6E06851F72AC26005ABFAB /* LohoTaiwan.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CF451CD21F87DA9400F3FB60 /* ScheduleViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				CF451CD31F87DB7B00F3FB60 /* ScheduleTableViewController.h */,
+				CF451CD41F87DB7B00F3FB60 /* ScheduleTableViewController.m */,
+			);
+			path = ScheduleViewControler;
+			sourceTree = "<group>";
+		};
+		CF4D0E7F1F83819C00D66246 /* MainViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				CF6E067F1F72AC26005ABFAB /* ViewController.h */,
+				CF6E06801F72AC26005ABFAB /* ViewController.m */,
+				CF337CE41F8280BA0082350E /* MainTableViewCell.h */,
+				CF337CE51F8280BA0082350E /* MainTableViewCell.m */,
+			);
+			path = MainViewControler;
+			sourceTree = "<group>";
+		};
+		CF4D0E801F8381EF00D66246 /* MapViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				CF6E069B1F72B30E005ABFAB /* MapViewController.h */,
+				CF6E069C1F72B30E005ABFAB /* MapViewController.m */,
+			);
+			path = MapViewControler;
+			sourceTree = "<group>";
+		};
+		CF4D0E811F83823300D66246 /* DetailViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				CF34FD161F7A3E080007E5C3 /* DetailTableViewCell.h */,
+				CF34FD171F7A3E080007E5C3 /* DetailTableViewCell.m */,
+				CF34FD131F7A3DD30007E5C3 /* DetailUITableViewController.h */,
+				CF34FD141F7A3DD30007E5C3 /* DetailUITableViewController.m */,
+			);
+			path = DetailViewControler;
+			sourceTree = "<group>";
+		};
+		CF4D0E821F8382B100D66246 /* ListViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				CF7614DB1F83907100437089 /* ListTableViewController.h */,
+				CF7614DC1F83907100437089 /* ListTableViewController.m */,
+			);
+			path = ListViewControler;
+			sourceTree = "<group>";
+		};
 		CF6E066D1F72AC26005ABFAB = {
 			isa = PBXGroup;
 			children = (
 				CF6E06781F72AC26005ABFAB /* LohoTaiwan */,
+				1C48674E971FE7135C976CB4 /* Pods */,
 				CF6E06771F72AC26005ABFAB /* Products */,
+				CF3637EF1F7ACF2200E30B13 /* ImageFile */,
+				CF6E06791F72AC26005ABFAB /* Supporting Files */,
+				CF6E06931F72AC5B005ABFAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,14 +231,12 @@
 			children = (
 				CF6E067C1F72AC26005ABFAB /* AppDelegate.h */,
 				CF6E067D1F72AC26005ABFAB /* AppDelegate.m */,
-				CF6E067F1F72AC26005ABFAB /* ViewController.h */,
-				CF6E06801F72AC26005ABFAB /* ViewController.m */,
-				CF6E06821F72AC26005ABFAB /* Main.storyboard */,
-				CF6E06881F72AC26005ABFAB /* Assets.xcassets */,
-				CF6E068A1F72AC26005ABFAB /* LaunchScreen.storyboard */,
+				CF3FB2B01F975C2B0059BDCB /* M */,
+				CF3FB2B11F975C540059BDCB /* V */,
+				CF3FB2B21F975CBD0059BDCB /* C */,
+				CF3FB2B41F975E640059BDCB /* CoreData */,
 				CF6E068D1F72AC26005ABFAB /* Info.plist */,
-				CF6E06851F72AC26005ABFAB /* LohoTaiwan.xcdatamodeld */,
-				CF6E06791F72AC26005ABFAB /* Supporting Files */,
+				CF3637F11F7AD70800E30B13 /* Assets.xcassets */,
 			);
 			path = LohoTaiwan;
 			sourceTree = "<group>";
@@ -80,6 +247,21 @@
 				CF6E067A1F72AC26005ABFAB /* main.m */,
 			);
 			name = "Supporting Files";
+			path = LohoTaiwan;
+			sourceTree = "<group>";
+		};
+		CF6E06931F72AC5B005ABFAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFD7A4771F95DB36001190B6 /* Bolts.framework */,
+				CFD7A4751F95DB36001190B6 /* FBSDKCoreKit.framework */,
+				CFD7A4761F95DB36001190B6 /* FBSDKLoginKit.framework */,
+				CFD7A4781F95DB36001190B6 /* FBSDKShareKit.framework */,
+				CF6E06961F72AC62005ABFAB /* CoreLocation.framework */,
+				CF6E06941F72AC5B005ABFAB /* MapKit.framework */,
+				EA59BCB6CB998E9FEB8CCB9F /* libPods-LohoTaiwan.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +271,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF6E06901F72AC26005ABFAB /* Build configuration list for PBXNativeTarget "LohoTaiwan" */;
 			buildPhases = (
+				44052E31DC1603595CCE4106 /* [CP] Check Pods Manifest.lock */,
 				CF6E06721F72AC26005ABFAB /* Sources */,
 				CF6E06731F72AC26005ABFAB /* Frameworks */,
 				CF6E06741F72AC26005ABFAB /* Resources */,
+				28D4C0C855966546860C7D9A /* [CP] Embed Pods Frameworks */,
+				2A1B85DC54530274D893DA84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -108,12 +293,21 @@
 		CF6E066E1F72AC26005ABFAB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "黃柏恩";
 				TargetAttributes = {
 					CF6E06751F72AC26005ABFAB = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = FEBUVZMYW4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -141,12 +335,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF6E068C1F72AC26005ABFAB /* LaunchScreen.storyboard in Resources */,
-				CF6E06891F72AC26005ABFAB /* Assets.xcassets in Resources */,
+				CF3637F21F7AD7AC00E30B13 /* Assets.xcassets in Resources */,
 				CF6E06841F72AC26005ABFAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28D4C0C855966546860C7D9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LohoTaiwan/Pods-LohoTaiwan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A1B85DC54530274D893DA84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LohoTaiwan/Pods-LohoTaiwan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44052E31DC1603595CCE4106 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF6E06721F72AC26005ABFAB /* Sources */ = {
@@ -156,7 +398,16 @@
 				CF6E06811F72AC26005ABFAB /* ViewController.m in Sources */,
 				CF6E06871F72AC26005ABFAB /* LohoTaiwan.xcdatamodeld in Sources */,
 				CF6E067E1F72AC26005ABFAB /* AppDelegate.m in Sources */,
+				CF7614DD1F83907100437089 /* ListTableViewController.m in Sources */,
+				CF34FD151F7A3DD30007E5C3 /* DetailUITableViewController.m in Sources */,
+				CF337CE61F8280BB0082350E /* MainTableViewCell.m in Sources */,
+				CF6E069D1F72B30E005ABFAB /* MapViewController.m in Sources */,
+				CFD7A47F1F95FBE1001190B6 /* LoginViewControler.m in Sources */,
 				CF6E067B1F72AC26005ABFAB /* main.m in Sources */,
+				CF451CD51F87DB7B00F3FB60 /* ScheduleTableViewController.m in Sources */,
+				CF3637F51F7C206800E30B13 /* Singleton.m in Sources */,
+				CF34FD181F7A3E080007E5C3 /* DetailTableViewCell.m in Sources */,
+				CF6E069A1F72AD22005ABFAB /* DownloadData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +443,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -200,7 +453,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -241,7 +498,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -249,7 +508,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -276,23 +539,40 @@
 		};
 		CF6E06911F72AC26005ABFAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63DBA13AC7901D437A43BC5B /* Pods-LohoTaiwan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FEBUVZMYW4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.27.1",
+				);
 				INFOPLIST_FILE = LohoTaiwan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Bryan.LohoTaiwan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryan.LohoTaiwan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CF6E06921F72AC26005ABFAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00CE6D9EE7C1F4C7ADAEB24F /* Pods-LohoTaiwan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FEBUVZMYW4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.27.1",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/huangboen/Desktop/自己的作品/Object-C/LohoTaiwan/FacebookSDKs-iOS-4.27.1";
 				INFOPLIST_FILE = LohoTaiwan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Bryan.LohoTaiwan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryan.LohoTaiwan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -315,6 +595,7 @@
 				CF6E06921F72AC26005ABFAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
