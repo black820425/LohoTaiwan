@@ -154,10 +154,7 @@
     
     NSString *AddressName;
     NSArray *AddressNameArray = @[@"Add",@"Address"];
-    NSString *activityTypeName;
-    NSArray *activityTypeArray = [[Singleton object] activityType];
-    activityTypeName = activityTypeArray[[[Singleton object] activity]];
-    if([activityTypeName containsString:@"休閒農場"]) {
+    if([readNameAddArray[1] containsString:@"休閒農場"]) {
         AddressName = AddressNameArray[1];
     } else {
         AddressName = AddressNameArray[0];

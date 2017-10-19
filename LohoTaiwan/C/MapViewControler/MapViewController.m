@@ -32,13 +32,15 @@
     NSString *newTaipeiRegionName;
     MKDirectionsResponse *directionResponse;
     
-    UIPickerView *mypickerView;
-    
     CLLocationManager *locationManager;
     CLLocationCoordinate2D coordinate;
     MKUserLocation *myuserlocation;
     
+    UIPickerView *mypickerView;
+    
     MKUserTrackingButton *traceBtn;
+    
+    
 }
 @property (weak, nonatomic) IBOutlet MKMapView *MapView;
 @property (nonatomic, strong) UITextField *pickerViewTextField;
@@ -91,12 +93,10 @@
     [self startpickViewSetting];
 }
 -(void)viewWillAppear:(BOOL)animated {
-    if ([[Singleton object].nameAndAddressArray firstObject] == nil &&
-        [[Singleton object].nameAddArray firstObject] == nil) {
+    if ([[Singleton object].nameAndAddressArray firstObject] == nil && [[Singleton object].nameAddArray firstObject] == nil) {
     } else {
         detailAddress = [Singleton object].nameAndAddressArray;
         [self putAnnotationFromDetailAddress];
-        self.navigationController.navigationBar.hidden = false;
     }
 }
 
@@ -326,8 +326,8 @@
         if(error) {
             NSLog(@"error%@",error);
         } else {
-            CLPlacemark *placeMark = placemarks[0];
-            NSLog(@"%@",placeMark);
+            //CLPlacemark *placeMark = placemarks[0];
+            //NSLog(@"%@",placeMark);
         }
     }];
 }
@@ -359,17 +359,17 @@
             int minutes = seconds/60;
             if(distanceInMeters > 1000) {
                 int miles = distanceInMeters/1000;
-                NSLog(@"計算出的距離為：%d公里又%g公尺",miles,distanceInMeters-(miles*1000));
+                //NSLog(@"計算出的距離為：%d公里又%g公尺",miles,distanceInMeters-(miles*1000));
                 distance = [NSString stringWithFormat:@"%d公里%g公尺",miles,distanceInMeters-(miles*1000)];
             } else {
-                NSLog(@"計算出的距離為：%g公尺",distanceInMeters);
+                //NSLog(@"計算出的距離為：%g公尺",distanceInMeters);
                 distance = [NSString stringWithFormat:@"%g公尺",distanceInMeters];
             }
             if(minutes > 60) {
-                int hours = minutes/60;
-                NSLog(@"花費的時間為%d小時又%d分鐘",hours,minutes-(hours*60));
+                //int hours = minutes/60;
+                //NSLog(@"花費的時間為%d小時又%d分鐘",hours,minutes-(hours*60));
             } else
-                NSLog(@"花費的時間為%d分鐘",minutes);
+                //NSLog(@"花費的時間為%d分鐘",minutes);
             for (MKRoute *route in response.routes) {
                 if (!value) {
                     [self.MapView addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
@@ -433,7 +433,7 @@
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    NSLog(@"didSelectAnnotationView:%f,%f",view.annotation.coordinate.latitude,view.annotation.coordinate.longitude);
+    //NSLog(@"didSelectAnnotationView:%f,%f",view.annotation.coordinate.latitude,view.annotation.coordinate.longitude);
 }
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
