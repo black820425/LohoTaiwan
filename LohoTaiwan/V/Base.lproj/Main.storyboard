@@ -76,6 +76,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zfs-NU-ubf"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="pJA-CW-5O3" id="mi0-53-Dqw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

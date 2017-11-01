@@ -14,6 +14,4 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *ImageView;
 
-
-
 @end

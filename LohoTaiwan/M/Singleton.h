@@ -8,28 +8,56 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+typedef void(^PassValueBlock)(NSArray*);
+
 @interface Singleton : NSObject
 
 @property (nonatomic, assign)NSInteger activity;
 
-@property (nonatomic, strong)NSArray *capitalName;
-
-@property (nonatomic, strong)NSArray *activityType;
+@property (nonatomic, strong)NSArray *capitalNameArray;
 
 @property (nonatomic, strong)NSArray *nameAddArray;
 
-@property (nonatomic, strong)NSArray *TaipeiRegionArray;
+@property (nonatomic, strong)NSArray *activityTypeArray;
 
-@property (nonatomic, strong)NSMutableArray *nameAndAddressArray;
+@property (nonatomic, strong)NSArray *taipeiRegionArray;
+
+@property (nonatomic, strong)NSArray *NewTaipeiRegionArray;
+
+@property (nonatomic, strong)NSArray *iIanRegionArray;
+
+@property (nonatomic, strong)NSArray *taoyuanRegionArray;
+
+@property (nonatomic, strong)NSArray *taichungRegionArray;
+
+@property (nonatomic, strong)NSArray *keelungRegionArray;
+
+@property (nonatomic, strong)NSArray *hualienRegionArray;
+
+@property (nonatomic, strong)NSArray *hsinchuRegionArray;
+
+@property (nonatomic, strong)NSArray *miaoliRegionArray;
+
+@property (nonatomic, strong)NSArray *changhuaRegionArray;
+
+@property (nonatomic, strong)NSArray *nantouRegionArray;
+
+@property (nonatomic, strong)NSArray *chiayiRegionArray;
+
+@property (nonatomic, strong)NSArray *taitungRegionArray;
+
+@property (nonatomic, strong)NSArray *tainanRegionArray;
+
+@property (nonatomic, strong)NSArray *kaohsiungRegionArray;
+
+@property (nonatomic, strong)NSArray *pingtungRegionArray;
+
+@property (nonatomic, strong)NSArray *regionNameArray;
 
 +(instancetype) object;
 
--(void)putNameAndAddressToMap:(NSString*)name address:(NSString*)address;
-
 -(NSArray*)readGovernmentData:(NSString*)entities attributes:(NSString*)attribute;
 
--(NSArray*)readGovernmentLeisureFarmData;
-
--(NSArray*)readnewTaipeiData:(NSString*)entities attributes:(NSString*)attribute;
+-(void)readGovernmentData:(NSString*)entities attributes:(NSString*)attribute block:(PassValueBlock)array;
 
 @end

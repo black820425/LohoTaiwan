@@ -4,157 +4,203 @@
 //
 //  Created by 黃柏恩 on 2017/10/3.
 //  Copyright © 2017年 黃柏恩. All rights reserved.
-#import <Chameleon.h>
 #import "Singleton.h"
+#import <Chameleon.h>
 #import "ViewController.h"
+#import "CustomPickerView.h"
 #import "ListTableViewController.h"
 #import "DetailUITableViewController.h"
-@interface ListTableViewController ()<UIPickerViewDelegate,UIPickerViewDataSource>
-
-@property (nonatomic, strong) UITextField *pickerViewTextField;
+@interface ListTableViewController ()<CustomPickerViewDelegate>
 
 @end
 
 @implementation ListTableViewController
 {
+    UIPickerView *mypickerView;
+    
     NSArray *dataArray;
-    NSString *AddressName;
+    NSArray *activityTypeArray;
     NSMutableArray *infosArray;
     
-    UIPickerView *mypickerView;
-    NSArray *activityTypeArray;
-    NSArray *capitalRegionArray;
+    NSArray *nameKeyArray ;
+    NSArray *addressKeyNameArray;
+
+    NSString *nameKey;
+    NSString *addressNameKey;
     NSString *capitalRegionName;
-    NSString *newTaipeiRegionName;
-    NSArray *newTaipeiRegionArray;
+    NSString *seletedRegionName;
+    
+    NSInteger capitalReginNumber;
+    
+    CustomPickerView *customPickView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    capitalRegionArray = [[Singleton object] capitalName];
-    activityTypeArray = [[Singleton object] activityType];
-    newTaipeiRegionArray = [[Singleton object] TaipeiRegionArray];
     infosArray = [NSMutableArray new];
+    self.navigationController.navigationBar.hidden = false;
+    
+    
+    capitalRegionName = [Singleton object].capitalNameArray[0];
+    
+    activityTypeArray = [[Singleton object] activityTypeArray];
+    
+    [self setToolBarInPickView];
     [self readActivityTypeData];
     [self putInfoArray];
-    [self startpickViewSetting];
-    self.navigationController.navigationBar.hidden = false;
 }
-- (IBAction)searchBtn:(id)sender {
-    [self.pickerViewTextField becomeFirstResponder];
-    if(capitalRegionName == nil && newTaipeiRegionName == nil) {
-        capitalRegionName = @"臺北市";
-        newTaipeiRegionName = @"板橋區";
+
+-(NSString*)setPickViewCompent:(CustomPickerView *)customPickerView {
+    return @"2";
+}
+
+-(void)setToolBarInPickView {
+    customPickView = [CustomPickerView new];
+    customPickView.DataSource = self;
+    
+    [self.view addSubview:customPickView.pickerViewTextField];
+    
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    toolBar.backgroundColor = [UIColor flatMintColor];
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:
+                                   UIBarButtonSystemItemDone target:self action:@selector(doneTouched)];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
+                                     UIBarButtonSystemItemCancel target:self action:@selector(cancelTouched)];
+    
+    // the middle button is to make the Done button align to right
+    [toolBar setItems:[NSArray arrayWithObjects:cancelButton, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],doneButton, nil]];
+    customPickView.pickerViewTextField.inputAccessoryView = toolBar;
+}
+
+#pragma mark - Set read datatype to give dataArray 設定選取得資料種類給 dataArray
+-(void)readActivityTypeData {
+    nameKeyArray = @[@"Name",@"stitle"];
+    addressKeyNameArray = @[@"Add",@"Address",@"address"];
+    
+    nameKey = nameKeyArray[0];
+    addressNameKey = addressKeyNameArray[0];
+    
+    if([activityTypeArray[[[Singleton object] activity]] containsString:activityTypeArray[0]]) {
+        dataArray = [[Singleton object]
+                     readGovernmentData:@"GovernmentAttractionsData"
+                     attributes:@"governmentAttractionsData"];
+    } else if([activityTypeArray[[[Singleton object] activity]] containsString:activityTypeArray[1]]) {
+        dataArray = [[Singleton object]
+                     readGovernmentData:@"GovernmentFoodData"
+                     attributes:@"governmentFoodData"];
+    } else if([activityTypeArray[[[Singleton object] activity]] containsString:activityTypeArray[2]]) {
+        dataArray = [[Singleton object]
+                     readGovernmentData:@"GovernmentLeisureFarmData"
+                     attributes:@"governmentLeisureFarmData"];
+        addressNameKey = addressKeyNameArray[1];
+    } else {
+        dataArray = [[Singleton object]
+                     readGovernmentData:@"GovernmentHotelBedAndBreakfastData"
+                     attributes:@"governmentHotelBedAndBreakfastData"];
     }
+}
+
+#pragma mark - Set data arrange to give infoArray 在總資料做整理再將數值給 infosArray.
+-(void)putInfoArray {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        for(NSDictionary *dataDictionary in dataArray) {
+            if(![dataDictionary[addressNameKey] containsString:[Singleton object].capitalNameArray[0]] &&
+               ![dataDictionary[addressNameKey] containsString:[Singleton object].capitalNameArray[1]]) {
+                if([dataDictionary[addressNameKey] length] > 0) {
+                    NSArray *infoArray = [NSArray new];
+                    NSString *address = [dataDictionary[addressNameKey]
+                                         stringByReplacingOccurrencesOfString:@" " withString:@""];
+                    infoArray = @[dataDictionary[nameKey],address];
+                    [infosArray addObject:infoArray];
+                    infoArray = nil;
+                }
+            }
+        }
+        [self.tableView reloadData];
+    });
 }
 
 -(void)startSearchRegion {
-    if([capitalRegionName containsString:@"新北市"]) {
-        if([activityTypeArray[[[Singleton object] activity]] containsString:@"景點"]) {
-            dataArray = [[Singleton object] readnewTaipeiData:@"NewTaipeiAttractionsData" attributes:@"NewTaipeiAttractionsData"];
-        } else if([activityTypeArray[[[Singleton object] activity]] containsString:@"餐飲"]) {
-            dataArray = [[Singleton object] readnewTaipeiData:@"NewTaipeiFoodData" attributes:@"newTaipeiFoodData"];
-        } else if([activityTypeArray[[[Singleton object] activity]] containsString:@"休閒農場"]) {
-            dataArray = [[Singleton object] readGovernmentLeisureFarmData];
-        } else {
-            dataArray = [[Singleton object] readGovernmentData:@"GovernmentHotelBedAndBreakfastData" attributes:@"governmentHotelBedAndBreakfastData"];
-        }
-    } else {
-        if([activityTypeArray[[[Singleton object] activity]] containsString:@"景點"]) {
-            dataArray = [[Singleton object] readGovernmentData:@"GovernmentAttractionsData" attributes:@"governmentAttractionsData"];
-        } else if([activityTypeArray[[[Singleton object] activity]] containsString:@"餐飲"]) {
-            dataArray = [[Singleton object] readGovernmentData:@"GovernmentFoodData" attributes:@"governmentFoodData"];
-        } else if([activityTypeArray[[[Singleton object] activity]] containsString:@"休閒農場"]) {
-            dataArray = [[Singleton object] readGovernmentLeisureFarmData];
-        } else {
-            dataArray = [[Singleton object] readGovernmentData:@"GovernmentHotelBedAndBreakfastData" attributes:@"governmentHotelBedAndBreakfastData"];
-        }
+    nameKey = nameKeyArray[0];
+    addressNameKey = addressKeyNameArray[0];
+    
+    if ([capitalRegionName containsString:@"新北市"] &&
+         [activityTypeArray[[[Singleton object] activity]] containsString:@"景點"]){
+        dataArray = [[Singleton object] readGovernmentData:@"NewTaipeiAttractionsData"
+                                                attributes:@"newTaipeiAttractionsData"];
+        [self searchChooseRegion];
+    } else if([capitalRegionName containsString:@"新北市"] &&
+                  [activityTypeArray[[[Singleton object] activity]] containsString:@"餐飲"]) {
+        dataArray = [[Singleton object] readGovernmentData:@"NewTaipeiFoodData"
+                                                attributes:@"newTaipeiFoodData"];
+        [self searchChooseRegion];
+    } else if([capitalRegionName containsString:@"臺北市"] &&
+                  [activityTypeArray[[[Singleton object] activity]] containsString:@"景點"]){
+        dataArray = [[Singleton object] readGovernmentData:@"TaipeiCityAttractionsData"
+                                                attributes:@"taipeiCityAttractionsData"];
+        nameKey = nameKeyArray[1];
+        addressNameKey = addressKeyNameArray[2];
+        [self searchChooseRegion];
     }
-    [self searchChooseRegion];
-    [self.tableView reloadData];
+    else
+    {
+        if([activityTypeArray[[[Singleton object] activity]] containsString:@"景點"]) {
+            dataArray = [[Singleton object] readGovernmentData:@"GovernmentAttractionsData"
+                                                    attributes:@"governmentAttractionsData"];
+        }else if([activityTypeArray[[[Singleton object] activity]] containsString:@"餐飲"]) {
+            
+            dataArray = [[Singleton object] readGovernmentData:@"GovernmentFoodData"
+                                                    attributes:@"governmentFoodData"];
+        }else if([activityTypeArray[[[Singleton object] activity]] containsString:@"休閒農場"]) {
+            dataArray = [[Singleton object] readGovernmentData:@"GovernmentLeisureFarmData"
+                                                    attributes:@"governmentLeisureFarmData"];
+            addressNameKey = addressKeyNameArray[1];
+        } else {
+            dataArray = [[Singleton object] readGovernmentData:@"GovernmentHotelBedAndBreakfastData"
+                                                    attributes:@"governmentHotelBedAndBreakfastData"];
+        }
+        [self searchChooseRegion];
+    }
 }
-
--(void)searchChooseRegion {
+#pragma mark - Set searchRegion data to give infosArray 設定篩選的條件資料給 infosArray
+-(void)searchChooseRegion{
     [infosArray removeAllObjects];
-    for(NSDictionary *dataDictionary in dataArray) {
-        if([dataDictionary[AddressName] containsString:@"新北市"]) {
-            if([dataDictionary[AddressName] containsString:newTaipeiRegionName]) {
-                NSArray *infoArray = [NSArray new];
-                infoArray = @[dataDictionary[@"Name"],dataDictionary[AddressName]];
-                [infosArray addObject:infoArray];
-                infoArray = nil;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString *address;
+
+        for(NSDictionary *dataDictionary in dataArray) {
+            NSArray *infoArray = [NSArray new];
+            if([dataDictionary[addressNameKey] containsString:capitalRegionName] &&
+               [dataDictionary[addressNameKey] containsString:seletedRegionName]) {
+                    address = [dataDictionary[addressNameKey] stringByReplacingOccurrencesOfString:@" " withString:@""];
+                    infoArray = @[dataDictionary[nameKey],address];
+                    [infosArray addObject:infoArray];
             }
-        } else {
-            if([dataDictionary[AddressName] containsString:capitalRegionName]) {
-                NSArray *infoArray = [NSArray new];
-                infoArray = @[dataDictionary[@"Name"],dataDictionary[AddressName]];
-                [infosArray addObject:infoArray];
-                infoArray = nil;
-            }
+            infoArray = nil;
         }
-    }
-    if(infosArray.count == 0) {
-        [self showAlert];
-    }
+        if(infosArray.count == 0) {
+            [self showAlert];
+        }
+        [self.tableView reloadData];
+    });
 }
 
 #pragma mark - Setting pickerView 設定選擇地區按鈕與 pickView 的相關初始值
+- (IBAction)searchBtn:(id)sender {
+    [customPickView.pickerViewTextField becomeFirstResponder];
+}
+
 -(void)doneTouched {
-    [self.pickerViewTextField resignFirstResponder];
+    capitalRegionName = customPickView.capitalRegionName;
+    seletedRegionName = customPickView.seletedRegionName;
+    [customPickView.pickerViewTextField resignFirstResponder];
     [self startSearchRegion];
 }
 
 -(void)cancelTouched {
-    [self.pickerViewTextField resignFirstResponder];
-}
-
--(void)startpickViewSetting {
-    self.pickerViewTextField = [[UITextField alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:self.pickerViewTextField];
-    
-    mypickerView = [UIPickerView new];
-    mypickerView.delegate = self;
-    mypickerView.dataSource = self;
-    
-    self.pickerViewTextField.inputView = mypickerView;
-    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    toolBar.backgroundColor = [UIColor flatMintColor];
-    
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                target:self action:@selector(doneTouched)];
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                  target:self action:@selector(cancelTouched)];
-    // the middle button is to make the Done button align to right
-    [toolBar setItems:[NSArray arrayWithObjects:cancelButton, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                       doneButton, nil]];
-    self.pickerViewTextField.inputAccessoryView = toolBar;
-}
-
-#pragma mark - Setting pickView delegate 設定 pickView 相關初始值
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    if([capitalRegionName containsString:@"新北市"]) {
-        return 2;
-    } else
-        return 1;
-}
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    if(component == 0) {
-        return capitalRegionArray.count;
-    } else
-        return newTaipeiRegionArray.count;
-}
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    if(component == 0) {
-        return capitalRegionArray[row];
-    } else
-        return newTaipeiRegionArray[row];
-}
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (component == 0) {
-        capitalRegionName = [capitalRegionArray[row] stringByReplacingOccurrencesOfString:@"台" withString:@"臺"];
-        [mypickerView reloadAllComponents];
-    } else
-        newTaipeiRegionName = newTaipeiRegionArray[row];
+    [customPickView.pickerViewTextField resignFirstResponder];
 }
 
 #pragma mark - Table view data source
@@ -165,7 +211,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return infosArray.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -179,44 +224,17 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSArray *array = infosArray[indexPath.row];
-    NSArray *nameAddarray = @[array[1],activityTypeArray[[[Singleton object] activity]],array[0]];
-    [Singleton object].nameAddArray = nameAddarray;
-    DetailUITableViewController *detailTableViewControler = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailUITableViewController"];
+    //nameAddarray[地址、種類、名字]
+    NSArray *nameAddArray = @[array[1],activityTypeArray[[[Singleton object] activity]],array[0]];
+    [Singleton object].nameAddArray = nameAddArray;
+    
+    DetailUITableViewController *detailTableViewControler =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"DetailUITableViewController"];
     [self.navigationController pushViewController:detailTableViewControler animated:true];
+    
 }
 
--(void)readActivityTypeData {
-    NSArray *AddressNameArray = @[@"Add",@"Address"];
-    if([activityTypeArray[[[Singleton object] activity]] containsString:@"休閒農場"]) {
-        AddressName = AddressNameArray[1];
-    } else {
-        AddressName = AddressNameArray[0];
-    }
-    if([activityTypeArray[[[Singleton object] activity]] containsString:@"景點"]) {
-        dataArray = [[Singleton object] readGovernmentData:@"GovernmentAttractionsData" attributes:@"governmentAttractionsData"];
-    } else if([activityTypeArray[[[Singleton object] activity]] containsString:@"餐飲"]) {
-        dataArray = [[Singleton object] readGovernmentData:@"GovernmentFoodData" attributes:@"governmentFoodData"];
-    } else if([activityTypeArray[[[Singleton object] activity]] containsString:@"休閒農場"]) {
-        dataArray = [[Singleton object] readGovernmentLeisureFarmData];
-    } else {
-        dataArray = [[Singleton object] readGovernmentData:@"GovernmentHotelBedAndBreakfastData" attributes:@"governmentHotelBedAndBreakfastData"];
-    }
-}
-
--(void)putInfoArray {
-    for(NSDictionary *dataDictionary in dataArray) {
-        if(![dataDictionary[AddressName] containsString:@"新北市"]) {
-            if([dataDictionary[AddressName] length] > 0) {
-                NSArray *infoArray = [NSArray new];
-                infoArray = @[dataDictionary[@"Name"],dataDictionary[AddressName]];
-                [infosArray addObject:infoArray];
-                infoArray = nil;
-            }
-        }
-
-    }
-}
-
+#pragma mark - Set Show alert to view 設定 AlertView
 -(void)showAlert {
     UIAlertController *printMessageControler = [UIAlertController alertControllerWithTitle:@"查無相關資訊" message:@"" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *done = [UIAlertAction actionWithTitle:@"確定" style:UIAlertActionStyleDefault handler:nil];

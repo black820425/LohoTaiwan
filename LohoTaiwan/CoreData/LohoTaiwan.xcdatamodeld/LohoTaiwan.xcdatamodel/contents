@@ -21,13 +21,17 @@
     <entity name="NewTaipeiFoodData" representedClassName="NewTaipeiFoodData" syncable="YES" codeGenerationType="class">
         <attribute name="newTaipeiFoodData" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
+    <entity name="TaipeiCityAttractionsData" representedClassName="TaipeiCityAttractionsData" syncable="YES" codeGenerationType="class">
+        <attribute name="taipeiCityAttractionsData" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
     <elements>
         <element name="GovernmentAttractionsData" positionX="-18" positionY="36" width="128" height="60"/>
         <element name="GovernmentCultureExhibitionData" positionX="-54" positionY="18" width="128" height="60"/>
+        <element name="GovernmentFoodData" positionX="-27" positionY="45" width="128" height="60"/>
+        <element name="GovernmentHotelBedAndBreakfastData" positionX="-9" positionY="72" width="128" height="60"/>
+        <element name="GovernmentLeisureFarmData" positionX="-18" positionY="54" width="128" height="60"/>
         <element name="NewTaipeiAttractionsData" positionX="-36" positionY="27" width="128" height="60"/>
         <element name="NewTaipeiFoodData" positionX="-36" positionY="36" width="128" height="60"/>
-        <element name="GovernmentFoodData" positionX="-27" positionY="45" width="128" height="60"/>
-        <element name="GovernmentLeisureFarmData" positionX="-18" positionY="54" width="128" height="60"/>
-        <element name="GovernmentHotelBedAndBreakfastData" positionX="-9" positionY="72" width="128" height="60"/>
+        <element name="TaipeiCityAttractionsData" positionX="-27" positionY="54" width="128" height="60"/>
     </elements>
 </model>

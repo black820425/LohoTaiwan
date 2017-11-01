@@ -31,13 +31,15 @@
     [self.tableView addGestureRecognizer:longPress];
 }
 
--(void)viewDidAppear:(BOOL)animated {    
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     dataArray = [[defaults objectForKey:@"ListData"] mutableCopy];
     [self.tableView reloadData];
     NSLog(@"%@",dataArray);
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
     dataArray = nil;
     recordTagArray = nil;
 }

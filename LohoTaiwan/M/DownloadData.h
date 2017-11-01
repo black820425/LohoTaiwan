@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DownloadData : NSObject
+@interface DownloadData : NSObject <NSXMLParserDelegate>
 
 -(void)GovernmentFoodData;
 
@@ -18,8 +18,12 @@
 
 -(void)GovernmentHotelBedAndBreakfastData;
 
+
 -(void)NewTaipeiFoodData;
 
 -(void)NewTaipeiAttractionsData;
+
+
+-(void)TaipeiCityAttractionsData;
 
 @end

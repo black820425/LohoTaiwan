@@ -4,10 +4,10 @@
 //
 //  Created by 黃柏恩 on 2017/10/17.
 //  Copyright © 2017年 黃柏恩. All rights reserved.
-//
+
 #import "LoginViewControler.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+//#import <FBSDKCoreKit/FBSDKCoreKit.h>
+//#import <FBSDKLoginKit/FBSDKLoginKit.h>
 @interface LoginViewControler ()
 
 @end
@@ -15,20 +15,17 @@
 @implementation LoginViewControler
 - (void)viewDidLoad {
     [super viewDidLoad];
-    FBSDKLoginButton *FBBtn = [FBSDKLoginButton new];
-    FBBtn.center = self.view.center;
-    [self.view addSubview:FBBtn];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-
+//    FBSDKLoginButton *FBBtn = [FBSDKLoginButton new];
+//    FBBtn.center = self.view.center;
+//    [self.view addSubview:FBBtn];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    if([FBSDKAccessToken currentAccessToken]) {
+    [super viewDidAppear:animated];
+    //if([FBSDKAccessToken currentAccessToken]) {
 //        TabBarViewController *tabBarView = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
 //        [self presentViewController:tabBarView animated:true completion:nil];
-    }
+    //}
 }
 
 - (void)didReceiveMemoryWarning {

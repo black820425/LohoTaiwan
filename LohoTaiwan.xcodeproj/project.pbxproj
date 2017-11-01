@@ -24,11 +24,8 @@
 		CF6E06971F72AC62005ABFAB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6E06961F72AC62005ABFAB /* CoreLocation.framework */; };
 		CF6E069A1F72AD22005ABFAB /* DownloadData.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6E06991F72AD22005ABFAB /* DownloadData.m */; };
 		CF6E069D1F72B30E005ABFAB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6E069C1F72B30E005ABFAB /* MapViewController.m */; };
+		CF70A7201FA2F34C0059913A /* CustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF70A71F1FA2F33E0059913A /* CustomPickerView.m */; };
 		CF7614DD1F83907100437089 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7614DC1F83907100437089 /* ListTableViewController.m */; };
-		CFD7A4791F95DCD0001190B6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD7A4771F95DB36001190B6 /* Bolts.framework */; };
-		CFD7A47A1F95DCD2001190B6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD7A4751F95DB36001190B6 /* FBSDKCoreKit.framework */; };
-		CFD7A47B1F95DCD6001190B6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD7A4761F95DB36001190B6 /* FBSDKLoginKit.framework */; };
-		CFD7A47C1F95DCD8001190B6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD7A4781F95DB36001190B6 /* FBSDKShareKit.framework */; };
 		CFD7A47F1F95FBE1001190B6 /* LoginViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD7A47E1F95FBE1001190B6 /* LoginViewControler.m */; };
 /* End PBXBuildFile section */
 
@@ -62,12 +59,10 @@
 		CF6E06991F72AD22005ABFAB /* DownloadData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadData.m; sourceTree = "<group>"; };
 		CF6E069B1F72B30E005ABFAB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		CF6E069C1F72B30E005ABFAB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		CF70A71E1FA2F33D0059913A /* CustomPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPickerView.h; sourceTree = "<group>"; };
+		CF70A71F1FA2F33E0059913A /* CustomPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPickerView.m; sourceTree = "<group>"; };
 		CF7614DB1F83907100437089 /* ListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
 		CF7614DC1F83907100437089 /* ListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
-		CFD7A4751F95DB36001190B6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "FacebookSDKs-iOS-4.27.1/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		CFD7A4761F95DB36001190B6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "FacebookSDKs-iOS-4.27.1/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
-		CFD7A4771F95DB36001190B6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "FacebookSDKs-iOS-4.27.1/Bolts.framework"; sourceTree = "<group>"; };
-		CFD7A4781F95DB36001190B6 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "FacebookSDKs-iOS-4.27.1/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		CFD7A47D1F95FBE1001190B6 /* LoginViewControler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewControler.h; sourceTree = "<group>"; };
 		CFD7A47E1F95FBE1001190B6 /* LoginViewControler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewControler.m; sourceTree = "<group>"; };
 		EA59BCB6CB998E9FEB8CCB9F /* libPods-LohoTaiwan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LohoTaiwan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,13 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFD7A47A1F95DCD2001190B6 /* FBSDKCoreKit.framework in Frameworks */,
 				CF6E06971F72AC62005ABFAB /* CoreLocation.framework in Frameworks */,
-				CFD7A47B1F95DCD6001190B6 /* FBSDKLoginKit.framework in Frameworks */,
-				CFD7A47C1F95DCD8001190B6 /* FBSDKShareKit.framework in Frameworks */,
 				CF6E06951F72AC5B005ABFAB /* MapKit.framework in Frameworks */,
 				70BEF275BED00E1C5DFE1238 /* libPods-LohoTaiwan.a in Frameworks */,
-				CFD7A4791F95DCD0001190B6 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +222,8 @@
 			children = (
 				CF6E067C1F72AC26005ABFAB /* AppDelegate.h */,
 				CF6E067D1F72AC26005ABFAB /* AppDelegate.m */,
+				CF70A71E1FA2F33D0059913A /* CustomPickerView.h */,
+				CF70A71F1FA2F33E0059913A /* CustomPickerView.m */,
 				CF3FB2B01F975C2B0059BDCB /* M */,
 				CF3FB2B11F975C540059BDCB /* V */,
 				CF3FB2B21F975CBD0059BDCB /* C */,
@@ -253,10 +246,6 @@
 		CF6E06931F72AC5B005ABFAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CFD7A4771F95DB36001190B6 /* Bolts.framework */,
-				CFD7A4751F95DB36001190B6 /* FBSDKCoreKit.framework */,
-				CFD7A4761F95DB36001190B6 /* FBSDKLoginKit.framework */,
-				CFD7A4781F95DB36001190B6 /* FBSDKShareKit.framework */,
 				CF6E06961F72AC62005ABFAB /* CoreLocation.framework */,
 				CF6E06941F72AC5B005ABFAB /* MapKit.framework */,
 				EA59BCB6CB998E9FEB8CCB9F /* libPods-LohoTaiwan.a */,
@@ -302,7 +291,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -408,6 +397,7 @@
 				CF3637F51F7C206800E30B13 /* Singleton.m in Sources */,
 				CF34FD181F7A3E080007E5C3 /* DetailTableViewCell.m in Sources */,
 				CF6E069A1F72AD22005ABFAB /* DownloadData.m in Sources */,
+				CF70A7201FA2F34C0059913A /* CustomPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,10 +533,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FEBUVZMYW4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.27.1",
-				);
 				INFOPLIST_FILE = LohoTaiwan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -562,11 +548,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FEBUVZMYW4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.27.1",
-				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/huangboen/Desktop/自己的作品/Object-C/LohoTaiwan/FacebookSDKs-iOS-4.27.1";
 				INFOPLIST_FILE = LohoTaiwan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
